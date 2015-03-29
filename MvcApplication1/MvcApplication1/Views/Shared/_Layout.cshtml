@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - MY Test APP</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Test App", "Index", "Home")</p>
+                </div>
+                <div class="float-rigt">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Food & Grocery", "Index", "Food")</li>
+                            <li>@Html.ActionLink("Health & Well being", "Index", "Health")</li>                            
+                            <li>@Html.ActionLink("Home & Living", "Index", "Living")</li>
+                            <li>@Html.ActionLink("Beauty & Personal Care", "Index", "Beauty")</li>
+                            <li>@Html.ActionLink("Coupons and Offers Zone", "Index", "Coupon")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>                                                   
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My Test APP</p>
+                </div>
+
+            </div>
+            <div class="footer_social">
+                <nav>
+                <ul id="social">
+        <li>
+          <a data-gaaction="Click_Footer_EMail" data-gaclick="1" href="mailto:" target="">MB
+          <div class="mail-bigicon"></div>
+</a>        </li>
+        <li>
+          <a data-gaaction="Click_Footer_Facebook" data-gaclick="1" href="http://www.google.com" target="_blank">FB
+          <div class="fb-icon"></div>
+</a>        </li>
+        <li>
+          <a data-gaaction="Click_Footer_Twitter" data-gaclick="1" href="http://www.google.com" target="_blank">TW
+          <div class="twitter-icon"></div>
+</a>        </li>
+        <li>
+          <a data-gaaction="Click_Footer_Pinterest" data-gaclick="1" href="http://www.google.com" target="_blank">PIN
+          <div class="pinterest-icon"></div>
+</a>        </li>
+        <li>
+          <a data-gaaction="Click_Footer_Youtube" data-gaclick="1" href="http://www.google.com" target="_blank">YT
+          <div class="youtube-icon"></div>
+</a>        </li>
+        <li>
+          <a data-gaaction="Click_Footer_Instagram" data-gaclick="1" href="http://www.google.com" target="_blank">INS
+          <div class="instagram-icon"></div>
+</a>        </li>
+      </ul>
+                    </nav>
+      <div class="fcallicon">
+        <a class="call-bigicon right" data-gaaction="Click_Footer_Phone" data-gaclick="1" href="tel:+919650439777">FCall
+        <span class="phoneNum">
+          +91 9650 439 777
+        </span>
+</a>  
+          
+      </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
